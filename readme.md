@@ -1,1 +1,1 @@
-A multi-agent system for tutoring students in preffered subjects.
+A multi-agent system for tutoring students in prefered subjects.
