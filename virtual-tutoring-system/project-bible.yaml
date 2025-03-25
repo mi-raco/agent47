@@ -34,7 +34,7 @@ Development:
     - Complex Behaviour:
       description: The agent takes on shifting roles, as it uses various tools in its arsenal to achieve the student's learning goal.
       solution: 
-        - multi-agent interconnected agents, with specific roles, operating in tandem
+        - multi-agent application, with specific roles, operating in tandem
 
   Best Practice:
     - codebase-maintainability:
