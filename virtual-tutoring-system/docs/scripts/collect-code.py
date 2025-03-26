@@ -19,6 +19,9 @@ files_object = read_files_in_folder(folder_path)
 output_file = './docs/file-content-server.txt'  # Replace with your desired output file path
 with open(output_file, 'w', encoding='utf-8') as f:
   for file_path, content in files_object.items():
+    f.write('---\n')
     f.write(f'File: {file_path}\n')
+    f.write('---\n')
     f.write(content)
+    f.write('---\n')
     f.write('\n\n')

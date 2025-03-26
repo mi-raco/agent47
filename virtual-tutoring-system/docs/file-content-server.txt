@@ -1,0 +1,117 @@
+---
+File: docker-compose.yml
+---
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:80"
+    environment:
+      - ENV=production
+    volumes:
+      - .:/app
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:---
+
+
+---
+File: dockerfile
+---
+# Use an official Python runtime as a parent image
+FROM python:3.11-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY . /app
+
+# Install Poetry
+RUN pip install --no-cache-dir poetry
+
+# Install dependencies using Poetry
+RUN poetry config virtualenvs.create false && poetry install --no-interaction --no-ansi
+
+# Make port 80 available to the world outside this container
+EXPOSE 80
+
+# Define environment variable
+ENV NAME World
+
+# Run app.py when the container launches
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]---
+
+
+---
+File: pyproject.toml
+---
+[tool.poetry]
+name = "virtual-tutoring-system"
+version = "1.0.0"
+description = "A virtual tutoring system."
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.85.0"
+uvicorn = {extras = ["standard"], version = "^0.18.3"}
+motor = "^3.1.1"
+pydantic = "^1.10.2"
+liteLLM = "^0.1.0"
+pytest = "^7.1.3"
+python-dotenv = "^0.21.0"
+bcrypt = "^3.2.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"---
+
+
+---
+File: readme.md
+---
+A multi-agent system for tutoring students in prefered subjects.---
+
+
+---
+File: scripts\migrate.sh
+---
+#!/bin/bash
+
+# Run database migrations
+docker-compose run app alembic upgrade head---
+
+
+---
+File: scripts\start.sh
+---
+#!/bin/bash
+
+# Build the Docker images
+docker-compose build
+
+# Run the Docker containers
+docker-compose up---
+
+
+---
+File: scripts\test.sh
+---
+#!/bin/bash
+
+# Run tests using pytest
+docker-compose run app pytest---
+
+
