@@ -14,9 +14,9 @@ def read_files_in_folder(folder_path):
     return result
 
 # Example usage:
-folder_path = './virtual-tutoring-system/code'  # Replace with your folder path
+folder_path = './server'  # Replace with your folder path
 files_object = read_files_in_folder(folder_path)
-output_file = './virtual-tutoring-system/docs/files-content.txt'  # Replace with your desired output file path
+output_file = './docs/file-content-server.txt'  # Replace with your desired output file path
 with open(output_file, 'w', encoding='utf-8') as f:
   for file_path, content in files_object.items():
     f.write(f'File: {file_path}\n')
