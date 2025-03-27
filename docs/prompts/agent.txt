@@ -11,7 +11,7 @@ This is our conversation history so far:
 ---
 File structure:
 -backend:
-{backend-file-structure}
+{file-structure-server}
 ---
 Code so far:
 {file-contents}

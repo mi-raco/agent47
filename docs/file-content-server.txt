@@ -80,7 +80,7 @@ build-backend = "poetry.core.masonry.api"---
 
 
 ---
-File: readme.md
+File: README.md
 ---
 A multi-agent system for tutoring students in prefered subjects.---
 

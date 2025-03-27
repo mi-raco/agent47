@@ -1,0 +1,7 @@
+docker-compose.yml
+dockerfile
+pyproject.toml
+README.md
+scripts\migrate.sh
+scripts\start.sh
+scripts\test.sh
