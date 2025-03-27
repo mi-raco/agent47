@@ -1,0 +1,47 @@
+Best Practice:
+
+  What is quality code?:
+    - easy to read, easy to understand, and easy to maintain.
+    - easy to test and easy to debug.
+    - easy to extend and easy to refactor.
+    - easy to integrate and easy to deploy.
+    - easy to scale and easy to monitor.
+    - easy to secure and easy to optimize.
+    - easy to document and easy to collaborate on.
+
+  codebase-maintainability:
+    why: 
+      - Codebase gets harder to maintain as it grows
+      - Codebase gets harder to understand as it grows
+    how:
+      - All code should be clean and follow PEP8 standards.
+      - The cognitive complexity of functions should be kept low.
+      - Good separation of responsibilities in the final product.
+      - Prefer concise templating languages like HAML.
+      - Prefer frameworks like NUXT3, opinionated about the project structure and conventions.
+      - Use versatile component libraries that are both fit for purpose and easy to extend.
+      - Only use docstring comments, documentation should reveal the local scope logic only.
+      - Avoid code repetition. There should be a single-source of truth for any operation.
+      - Use a consistent naming convention for variables, functions, and classes.
+      - Use object oriented patterns and type hints to make the codebase more readable and maintainable.
+
+  separation-of-responsibility:
+    why: 
+      - codebase should be easy to test and mock at every level.
+      - codebase should be easy to maintain and extend.
+      - codebase should be modular enough to support switching integrations or components.
+      - codebase should be easy to understand and debug.
+    solution:
+      Implement code in layers:
+        Presentation Layer: 
+          - UI components, API endpoints, and other user-facing elements.
+          - Only service calling and data transformation logic should be present here.
+          - Types for this layer can be found in the schemas module.
+        Business Logic Layer: The core logic of the application, where the business rules are enforced.
+          - The layer that interacts with the presentation layer and the data access layer.
+          - The layer that handles the business logic and the application state.
+          - Types for this layer can be found in the interfaces module.
+        Data Access Layer: 
+          - The layer that interacts with the database or external services.
+          - The layer that handles the data transformation and validation.
+          - Types for this layer can be found in the models module.

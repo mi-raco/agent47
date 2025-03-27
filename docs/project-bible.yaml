@@ -24,47 +24,29 @@ Project:
     - The student should recieve feedback and advice at the end of a session.
     - The student should be able to monitor their progress and performance in a dashboard.
 
-Development:
-  System Requirements:
-    - High Throughput:
-      description: The agent should be able to handle a large number of students at once.
-      solution: 
-        - Use an asynchronous web framework like FastAPI.
-        - Use an asynchronous database driver like Motor.
-    - Complex Behaviour:
-      description: The agent takes on shifting roles, as it uses various tools in its arsenal to achieve the student's learning goal.
-      solution: 
-        - multi-agent application, with specific roles, operating in tandem
+System Requirements:
+  - High Throughput:
+    description: The agent should be able to handle a large number of students at once.
+    solution: 
+      - Use an asynchronous web framework like FastAPI.
+      - Use an asynchronous database driver like Motor.
+  - Complex Behaviour:
+    description: The agent takes on shifting roles, as it uses various tools in its arsenal to achieve the student's learning goal.
+    solution: 
+      - multi-agent application, with specific roles, operating in tandem
 
-  Best Practice:
-    - codebase-maintainability:
-      description: Codebase gets harder to maintain as it grows
-      solution:
-        - All code should be clean and follow PEP8 standards.
-        - The cognitive complexity of functions should be kept low.
-        - Good separation of responsibilities in the final product.
-        - Prefer concise templating languages like HAML.
-        - Prefer opinionated frameworks like NUXT3 about the project structure.
-        - Use versatile component libraries that are both fit for purpose and easy to
-        - Only use docstring comments, functions should reveal the local scope logic only.
-        - Avoid code repetition. There should be a single-source of truth for any operation.
-    - separation-of-responsibility:
-      description: The codebase should be easy to test and mock at every level.
-      solution:
-        - Implement dependency injection patterns.
-
-  Technology Stack:
-    database: 
-      - MongoDB
-    backend:
-      - FastAPI (main server)
-      - liteLLM (Lightweight Language Model Wrapper)
-      - Motor (Async MongoDB driver)
-      - Pydantic (Data validation)
-      - Pytest (Testing)
-      - Swagger (API documentation)
-    frontend:
-      - NUXT3
-      - openapi-generator-cli
+Potential Technologies:
+  database: 
+    - MongoDB
+  backend:
+    - FastAPI (main server)
+    - liteLLM (Lightweight Language Model Wrapper)
+    - Motor (Async MongoDB driver)
+    - Pydantic (Data validation)
+    - Pytest (Testing)
+    - Swagger (API documentation)
+  frontend:
+    - NUXT3
+    - openapi-generator-cli
 
   
