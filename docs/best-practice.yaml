@@ -45,3 +45,98 @@ Best Practice:
           - The layer that interacts with the database or external services.
           - The layer that handles the data transformation and validation.
           - Types for this layer can be found in the models module.
+
+  fastapi-specific-guidelines:
+    why:
+      - FastAPI is a modern, fast web framework for building APIs
+      - Provides automatic OpenAPI documentation
+      - Built-in data validation with Pydantic
+    how:
+      - Use dependency injection for better testability and modularity
+      - Leverage FastAPI's built-in validation and serialization
+      - Implement proper error handling with HTTPException
+      - Use async/await patterns for better performance
+      - Structure routes logically using APIRouter
+      - Implement proper CORS and security middleware
+      - Use background tasks for long-running operations
+
+  mongodb-best-practices:
+    why:
+      - MongoDB is a flexible document database
+      - Requires careful schema design for optimal performance
+    how:
+      - Design schemas with proper indexing strategy
+      - Use Motor for async MongoDB operations
+      - Implement proper connection pooling
+      - Use bulk operations when possible
+      - Implement proper error handling for database operations
+      - Use transactions for data consistency
+      - Implement proper data validation at the database level
+
+  testing-strategy:
+    why:
+      - Ensures code reliability and maintainability
+      - Prevents regressions
+      - Facilitates refactoring
+    how:
+      - Write unit tests for business logic
+      - Implement integration tests for API endpoints
+      - Use pytest fixtures for test setup
+      - Mock external services and database calls
+      - Maintain high test coverage
+      - Use parameterized tests for edge cases
+      - Implement proper test isolation
+
+  security-guidelines:
+    why:
+      - Protect sensitive data and user information
+      - Prevent common security vulnerabilities
+    how:
+      - Use bcrypt for password hashing
+      - Implement proper JWT token management
+      - Use environment variables for sensitive data
+      - Implement rate limiting
+      - Use HTTPS in production
+      - Implement proper input validation
+      - Follow OWASP security guidelines
+
+  deployment-practices:
+    why:
+      - Ensure reliable and scalable application deployment
+      - Maintain consistent environments
+    how:
+      - Use Docker for containerization
+      - Implement proper logging
+      - Use health check endpoints
+      - Implement proper monitoring
+      - Use environment-specific configurations
+      - Implement proper backup strategies
+      - Use CI/CD pipelines for automated deployment
+
+  error-handling:
+    why:
+      - Improve user experience
+      - Facilitate debugging
+      - Maintain system stability
+    how:
+      - Implement global exception handlers
+      - Use proper error logging
+      - Return meaningful error messages
+      - Implement proper retry mechanisms
+      - Use circuit breakers for external services
+      - Implement proper fallback strategies
+      - Use proper error tracking and monitoring
+
+  documentation:
+    why:
+      - Facilitate onboarding
+      - Improve maintainability
+      - Enable better collaboration
+    how:
+      - Maintain up-to-date API documentation
+      - Document complex business logic
+      - Use clear and concise comments
+      - Maintain a comprehensive README
+      - Document deployment procedures
+      - Document testing procedures
+      - Use proper versioning for API changes
