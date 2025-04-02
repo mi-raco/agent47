@@ -2,6 +2,16 @@ docker-compose.yml
 dockerfile
 pyproject.toml
 README.md
+app\config.py
+app\main.py
+app\api\dependencies.py
+app\api\v1\students.py
+app\models\base.py
+app\models\session.py
+app\models\student.py
+app\schemas\student.py
+app\services\base.py
+app\services\student_service.py
 scripts\migrate.sh
 scripts\start.sh
 scripts\test.sh
